@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Theory of Relativity and Black Holes - Cosmos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #1a103d 0%, #2d1b6b 100%);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: linear-gradient(to right, #c084fc, #a78bfa);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .article-content {
+      animation: fadeIn 1s ease-in-out;
+    }
+    .sidebar-link {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .sidebar-link:hover {
+      background-color: #4c1d95;
+      color: #e9d5ff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .glow-effect {
+      box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
+    }
+    .prose-invert a {
+      color: #c084fc;
+      transition: color 0.3s ease;
+    }
+    .prose-invert a:hover {
+      color: #e9d5ff;
+    }
+  </style>
+</head>
+<body class="text-gray-100">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-950 to-indigo-950 py-6 sticky top-0 z-50 shadow-lg glow-effect">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-purple-300 tracking-wide">Cosmos</h1>
+      <nav>
+        <ul class="flex space-x-8">
+          <li><a href="index.html" class="nav-link text-lg hover:text-purple-300">Home</a></li>
+          <li><a href="index.html#articles" class="nav-link text-lg hover:text-purple-300">Articles</a></li>
+          <li><a href="index.html#about" class="nav-link text-lg hover:text-purple-300">About</a></li>
+          <li><a href="#" class="nav-link text-lg hover:text-purple-300">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <section class="container mx-auto px-4 py-16 flex flex-col md:flex-row gap-8">
+    <!-- Sidebar -->
+    <aside class="md:w-1/4 bg-gray-800 rounded-xl p-6 sticky top-24 h-fit glow-effect">
+      <h3 class="text-xl font-bold text-purple-300 mb-4">Article Contents</h3>
+      <ul class="space-y-2">
+        <li><a href="#introduction" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Introduction</a></li>
+        <li><a href="#general-relativity" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">General Relativity</a></li>
+        <li><a href="#test1" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Test 1: Solar Eclipse</a></li>
+        <li><a href="#test2" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Test 2: Mercury's Orbit</a></li>
+        <li><a href="#spacetime" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Space and Time</a></li>
+        <li><a href="#black-holes" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Black Holes</a></li>
+        <li><a href="#formation" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Formation</a></li>
+        <li><a href="#types" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Types of Black Holes</a></li>
+        <li><a href="#observations" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Observational Evidence</a></li>
+        <li><a href="#conclusion" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Conclusion</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Article -->
+    <div class="md:w-3/4 bg-gray-800 rounded-xl p-8 article-content glow-effect">
+      <h2 class="text-4xl font-bold text-center mb-12 text-purple-300">The General Theory of Relativity and Black Holes</h2>
+      <div class="prose prose-invert max-w-none">
+        <h3 id="introduction">Introduction</h3>
+        <p>The General Theory of Relativity, formulated by Albert Einstein in 1915, stands as a cornerstone of modern physics, fundamentally reshaping our understanding of gravity, space, and time. Building on his earlier Special Theory of Relativity (1905), which addressed objects moving at constant speeds, Einstein sought to explain gravity in a universe where massive objects influence each other’s motion. This theory not only provided a new framework for gravity but also predicted the existence of enigmatic cosmic phenomena like black holes—objects so dense that their gravitational pull traps even light. This article explores the principles of General Relativity, its experimental validations, and the fascinating nature of black holes, which continue to captivate scientists and the public alike.</p>
+
+        <h3 id="general-relativity">Part 1: The Theory of General Relativity</h3>
+        <p>Published in 1915, Einstein’s General Theory of Relativity revolutionized physics by redefining gravity. Unlike Newton’s concept of gravity as a force between masses, Einstein proposed that gravity arises from the curvature of spacetime caused by mass and energy. This curvature dictates how objects move, from planets orbiting stars to light bending near massive objects. The theory’s mathematical foundation, encapsulated in Einstein’s field equations, describes how matter and energy shape spacetime and how spacetime, in turn, influences motion. These equations, expressed as \( G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} \), where \( G_{\mu\nu} \) is the Einstein tensor and \( T_{\mu\nu} \) is the stress-energy tensor, have enabled precise predictions about cosmic phenomena, from planetary orbits to the expansion of the universe.</p>
+        <p>The theory’s implications were profound, leading to discoveries such as gravitational waves, time dilation, and black holes. Its publication marked a turning point, challenging centuries-old Newtonian mechanics and providing a framework for modern cosmology.</p>
+
+        <h4 id="test1">Test 1: The 1919 Solar Eclipse</h4>
+        <p>The first major experimental validation of General Relativity came during a solar eclipse on May 11, 1919, led by British astronomer Arthur Eddington. Einstein predicted that the Sun’s mass would curve spacetime, bending the light from distant stars passing near it. During the eclipse, when the Sun’s glare was obscured, Eddington’s team measured the positions of stars near the Sun’s edge and compared them to their known positions at night. The observed shift matched Einstein’s predictions, confirming that spacetime curvature caused starlight to bend—a phenomenon known as gravitational lensing. This experiment, conducted on the island of Príncipe and in Sobral, Brazil, catapulted Einstein to global fame and solidified General Relativity as a groundbreaking theory.</p>
+
+        <h4 id="test2">Test 2: Mercury’s Orbit</h4>
+        <p>Another triumph of General Relativity was its explanation of an anomaly in Mercury’s orbit, known as the precession of its perihelion. Astronomers had observed that Mercury’s orbit shifted by approximately 43 arcseconds per century, a discrepancy that Newtonian mechanics couldn’t fully account for. Hypotheses like an unseen planet (tentatively named Vulcan) or an asteroid belt were proposed but lacked evidence. Einstein’s theory resolved this by showing that the Sun’s mass warps spacetime, causing Mercury’s orbit to precess slightly with EACH revolution. This precise agreement between observation and prediction, calculated using the Schwarzschild solution to Einstein’s field equations, provided further evidence for General Relativity’s accuracy.</p>
+
+        <h4 id="spacetime">The Fabric of Space and Time</h4>
+        <p>Central to General Relativity is the concept of spacetime, a four-dimensional continuum combining three spatial dimensions and one temporal dimension. Einstein envisioned spacetime as a flexible fabric that massive objects, like stars or planets, deform, creating “wells” that influence the motion of other objects. This curvature explains why planets follow elliptical orbits and why light bends near massive bodies. A classic analogy is a bowling ball on a trampoline, where the ball’s weight creates a dip that affects the path of smaller objects rolling nearby.</p>
+        <p>Time dilation, a key prediction, illustrates how spacetime affects time. Consider a light clock, where a photon bounces between two mirrors to measure time. For a stationary observer, the photon travels a straight path, ticking at a constant rate. For an observer moving relative to the clock (e.g., on a spaceship), the photon’s path appears diagonal, taking longer to complete a cycle, resulting in slower perceived time. This effect, observed in experiments like the Hafele-Keating experiment (1971) with atomic clocks on airplanes, confirms that time runs slower in stronger gravitational fields or at higher relative speeds, as predicted by General Relativity. The original document’s claim about faster-than-light travel is incorrect; time dilation occurs due to relative motion or gravity, not superluminal speeds.</p>
+
+        <h3 id="black-holes">Part 2: Black Holes</h3>
+        <p>Black holes, predicted by General Relativity, are among the most enigmatic objects in the universe. They form regions of spacetime where gravity is so intense that the escape velocity exceeds the speed of light (\( c \approx 3 \times 10^8 \, \text{m/s} \)), preventing anything, including light, from escaping. This property makes black holes invisible, detectable only through their gravitational effects or surrounding matter. However, Stephen Hawking’s 1974 discovery of Hawking radiation suggests that black holes emit particles due to quantum effects near the event horizon, causing them to slowly lose mass over time. This challenges the notion of black holes as completely inescapable.</p>
+        <p>Black holes are characterized by their event horizon, the boundary beyond which nothing can return, and their singularity, a point of infinite density at the core. Large black holes often have accretion disks—rotating rings of gas and dust spiraling inward, heating up, and emitting X-rays, making them observable.</p>
+
+        <h4 id="formation">Formation</h4>
+        <p>Black holes typically form from the collapse of massive stars (at least 20 times the Sun’s mass). A star’s life begins in a nebula, where hydrogen clouds coalesce under gravity, igniting nuclear fusion to form helium and heavier elements. This fusion produces an outward pressure that balances gravity’s inward pull, maintaining stability. When the star’s hydrogen is depleted, fusion slows, and gravity dominates, compressing the core. For massive stars, this collapse triggers a supernova—a cataclysmic explosion expelling outer layers while the core collapses into a singularity, forming a black hole. The supernova’s energy can outshine an entire galaxy, as seen in events like SN 1987A.</p>
+        <p>As NASA describes, “A black hole is an astronomical object with a gravitational pull so strong that nothing, not even light, can escape it.” This process highlights the delicate balance between nuclear fusion and gravity, with black holes representing the ultimate victory of gravitational collapse.</p>
+
+        <h4 id="types">Types of Black Holes</h4>
+        <p>Black holes are classified into three main types based on their mass and formation:</p>
+        <ul class="list-disc pl-6">
+          <li><strong>Primordial Black Holes:</strong> Hypothetical black holes, potentially formed in the early universe due to density fluctuations. Smaller than an atom’s nucleus, they could range from microscopic to several solar masses. Some theories suggest they contribute to dark matter, though no direct evidence exists. Their small size makes them candidates for rapid evaporation via Hawking radiation.</li>
+          <li><strong>Stellar-Mass Black Holes:</strong> Formed from the collapse of massive stars, these black holes have masses between 3 and 100 solar masses. They are detected in binary systems, where their gravity affects companion stars, or through X-ray emissions from accretion disks, as in Cygnus X-1.</li>
+          <li><strong>Supermassive Black Holes:</strong> Residing at galactic centers, these giants range from millions to billions of solar masses. For example, Sagittarius A* in the Milky Way has a mass of about 4 million solar masses. Their formation is less understood, possibly resulting from mergers of smaller black holes or rapid accretion in the early universe.</li>
+        </ul>
+        <p>Accretion disks around supermassive black holes power active galactic nuclei, like quasars, which emit intense radiation across the electromagnetic spectrum.</p>
+
+        <h4 id="observations">Observational Evidence</h4>
+        <p>Direct observation of black holes is challenging due to their invisibility, but their presence is inferred through gravitational effects. The Event Horizon Telescope (EHT) achieved a milestone in 2019 by capturing the first image of a black hole’s shadow in the galaxy M87, showing a bright ring (the accretion disk) around a dark event horizon. Gravitational wave detections by LIGO and Virgo, starting in 2015, have confirmed black hole mergers, providing direct evidence of their existence. X-ray telescopes, like NASA’s Chandra, detect emissions from accretion disks, while the motion of stars and gas near galactic centers, such as around Sagittarius A*, reveals the presence of supermassive black holes.</p>
+        <p>Recent studies, including those in 2025, continue to refine our understanding, with observations of black hole jets and their role in galaxy formation. These discoveries underscore General Relativity’s predictive power and the ongoing quest to unravel black hole mysteries.</p>
+
+        <h3 id="conclusion">Conclusion</h3>
+        <p>The General Theory of Relativity transformed our understanding of the universe, replacing Newton’s force-based gravity with a dynamic spacetime framework. Its predictions, from gravitational lensing to black holes, have been repeatedly confirmed, shaping modern astrophysics. Black holes, once theoretical curiosities, are now central to cosmology, offering insights into the universe’s structure and evolution. Ongoing research, including gravitational wave observatories and advanced telescopes, continues to probe these enigmatic objects, ensuring that Einstein’s legacy endures in our exploration of the cosmos.</p>
+
+        <p class="mt-8 text-sm text-gray-400">Image sources: The Anderson Institute, Einstein-online.info. For inquiries, contact <a href="mailto:vashwardhantiwar28@gmail.com" class="text-purple-400 hover:text-purple-500">vashwardhantiwar28@gmail.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-950 to-indigo-950 py-8 glow-effect">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-300">© 2025 Cosmos. All rights reserved.</p>
+      <div class="mt-4 space-x-6">
+        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Privacy Policy</a>
+        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation and sidebar links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fade-in animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.article-content h3, .article-content h4, .article-content p, .article-content ul').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
