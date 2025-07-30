@@ -3,171 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosmos</title>
-  <link rel="icon" type="image/x-icon" href="https://favicon.io/emoji-favicons/star">
+  <title>Test Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #1a103d 0%, #2d1b6b 100%);
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(88, 28, 135, 0.4);
     }
-    .hero-bg {
-      background-image: linear-gradient(rgba(50, 0, 100, 0.8), rgba(50, 0, 100, 0.8)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform-style: preserve-3d;
-    }
-    .card:hover {
-      transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-      box-shadow: 0 15px 30px rgba(192, 132, 252, 0.3);
-    }
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: linear-gradient(to right, #c084fc, #a78bfa);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .glow-effect {
-      box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
-    }
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .cta-button {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+    .gradient-bg {
+      background: linear-gradient(135deg, #6b21a8 0%, #7e22ce 100%);
     }
   </style>
 </head>
-<body class="text-gray-100">
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-purple-950 to-indigo-950 py-6 sticky top-0 z-50 shadow-lg glow-effect">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-purple-300 tracking-wide">Cosmos</h1>
-      <nav>
-        <ul class="flex space-x-8">
-          <li><a href="#" class="nav-link text-lg hover:text-purple-300">Home</a></li>
-          <li><a href="#articles" class="nav-link text-lg hover:text-purple-300">Articles</a></li>
-          <li><a href="#about" class="nav-link text-lg hover:text-purple-300">About</a></li>
-          <li><a href="#" class="nav-link text-lg hover:text-purple-300">Contact</a></li>
-        </ul>
-      </nav>
+<body class="bg-gradient-to-br from-purple-800 to-purple-900 min-h-screen flex flex-col items-center justify-center">
+  <div class="container mx-auto p-8">
+    <h1 class="text-5xl font-extrabold text-center mb-12 text-white bg-gradient-to-r from-purple-900 to-purple-700 py-4 px-8 rounded-xl shadow-lg">Test Portal</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Test Card 1 -->
+      <a href="test1.html" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <h2 class="text-2xl font-bold text-purple-900 mt-4">Math Test</h2>
+        <p class="text-purple-700 mt-2">Test your algebra and geometry skills with challenging questions.</p>
+        <div class="mt-4 text-purple-600 font-semibold">Start Now →</div>
+      </a>
+      <!-- Test Card 2 -->
+      <a href="test2.html" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <h2 class="text-2xl font-bold text-purple-900 mt-4">Science Test</h2>
+        <p class="text-purple-700 mt-2">Explore physics and chemistry concepts in depth.</p>
+        <div class="mt-4 text-purple-600 font-semibold">Start Now →</div>
+      </a>
+      <!-- Test Card 3 -->
+      <a href="test3.html" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <h2 class="text-2xl font-bold text-purple-900 mt-4">History Test</h2>
+        <p class="text-purple-700 mt-2">Challenge your knowledge of world history.</p>
+        <div class="mt-4 text-purple-600 font-semibold">Start Now →</div>
+      </a>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-bg h-screen flex items-center justify-center text-center fade-in">
-    <div class="px-4">
-      <h2 class="text-5xl md:text-7xl font-bold mb-6 text-purple-200 animate-pulse">It`s Simply Cosmos</h2>
-      <p class="text-xl md:text-3xl mb-8 text-gray-200 max-w-2xl mx-auto">Articles related to astronomy</p>
-      <a href="#articles" class="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold py-3 px-8 rounded-full text-lg cta-button glow-effect">Discover Now</a>
-    </div>
-  </section>
-
-  <!-- Articles Section -->
-  <section id="articles" class="container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-bold text-center mb-12 text-purple-300 fade-in">Latest Discoveries</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Article Card 1 -->
-      <div class="card bg-gray-800 rounded-xl overflow-hidden fade-in">
-        <img src="https://images.unsplash.com/photo-1454789548928-9efd0cb136d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Article 1" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-3 text-purple-200">General Theory of Relativity and Black Holes</h3>
-          <p class="text-gray-300 mb-4">Explore Einstein's groundbreaking theory and the mysterious nature of black holes.</p>
-          <a href="relativity-black-holes.html" class="text-purple-400 hover:text-purple-500 font-medium">Read More →</a>
-        </div>
-      </div>
-      
-      <!-- Article Card 2 -->
-      <div class="card bg-gray-800 rounded-xl overflow-hidden fade-in">
-        <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Article 3" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-3 text-purple-200">More Articles Coming soon </h3>
-          <p class="text-gray-300 mb-4">
-          <a href="#" cl/a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="bg-gradient-to-b from-gray-800 to-gray-900 py-16 fade-in">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12 text-purple-300">About Us</h2>
-      <div class="max-w-3xl mx-auto text-gray-300">
-        <p class="mb-4">The Space Exploration Hub is dedicated to advancing human understanding of the cosmos through cutting-edge research, exploration, and education. Inspired by the pioneering spirit of space agencies worldwide, we aim to inspire curiosity and foster a deeper appreciation for the universe.</p>
-        <p class="mb-4">Our mission is to provide accurate, engaging, and accessible content about space science, astronomy, and exploration. From the latest discoveries in astrophysics to updates on interplanetary missions, we bring the wonders of the universe to enthusiasts, students, and professionals alike.</p>
-        <p>Founded in 2025, our team of scientists, educators, and communicators works tirelessly to bridge the gap between complex scientific concepts and the public. Join us as we explore the stars, uncover the mysteries of the cosmos, and push the boundaries of what is possible.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-purple-950 to-indigo-950 py-8 glow-effect">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-300">© 2025 Cosmos. All rights reserved.</p>
-      <div class="mt-4 space-x-6">
-        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Privacy Policy</a>
-        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Terms of Use</a>
-      </div>
-    </div>
-  </footer>
-
+  </div>
   <script>
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+    // Add click animation
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.add('scale-95');
+        setTimeout(() => card.classList.remove('scale-95'), 200);
       });
-    });
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-      const hero = document.querySelector('.hero-bg');
-      const scrollPosition = window.pageYOffset;
-      hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-    });
-
-    // Fade-in animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
     });
   </script>
 </body>
