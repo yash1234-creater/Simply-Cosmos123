@@ -3,181 +3,383 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>General Theory of Relativity and Black Holes - Cosmos</title>
+  <title>Motion Test - Class 9 (NCERT)</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #1a103d 0%, #2d1b6b 100%);
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    h1, h2, h3, h4 {
-      font-family: 'Orbitron', sans-serif;
+    .card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(88, 28, 135, 0.4);
     }
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
+    .gradient-bg {
+      background: linear-gradient(135deg, #6b21a8 0%, #7e22ce 100%);
     }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: linear-gradient(to right, #c084fc, #a78bfa);
-      transition: width 0.3s ease;
+    .option-label {
+      transition: background-color 0.2s ease;
     }
-    .nav-link:hover::after {
-      width: 100%;
+    .option-label:hover {
+      background-color: #e9d5ff;
     }
-    .article-content {
-      animation: fadeIn 1s ease-in-out;
+    #result-container {
+      display: none;
+      transition: opacity 0.5s ease;
     }
-    .sidebar-link {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .sidebar-link:hover {
-      background-color: #4c1d95;
-      color: #e9d5ff;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .glow-effect {
-      box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
-    }
-    .prose-invert a {
-      color: #c084fc;
-      transition: color 0.3s ease;
-    }
-    .prose-invert a:hover {
-      color: #e9d5ff;
+    #result-container.show {
+      display: block;
+      opacity: 1;
     }
   </style>
 </head>
-<body class="text-gray-100">
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-purple-950 to-indigo-950 py-6 sticky top-0 z-50 shadow-lg glow-effect">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-purple-300 tracking-wide">Cosmos</h1>
-      <nav>
-        <ul class="flex space-x-8">
-          <li><a href="index.html" class="nav-link text-lg hover:text-purple-300">Home</a></li>
-          <li><a href="index.html#articles" class="nav-link text-lg hover:text-purple-300">Articles</a></li>
-          <li><a href="index.html#about" class="nav-link text-lg hover:text-purple-300">About</a></li>
-          <li><a href="#" class="nav-link text-lg hover:text-purple-300">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Article Content -->
-  <section class="container mx-auto px-4 py-16 flex flex-col md:flex-row gap-8">
-    <!-- Sidebar -->
-    <aside class="md:w-1/4 bg-gray-800 rounded-xl p-6 sticky top-24 h-fit glow-effect">
-      <h3 class="text-xl font-bold text-purple-300 mb-4">Article Contents</h3>
-      <ul class="space-y-2">
-        <li><a href="#introduction" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Introduction</a></li>
-        <li><a href="#general-relativity" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">General Relativity</a></li>
-        <li><a href="#test1" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Test 1: Solar Eclipse</a></li>
-        <li><a href="#test2" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Test 2: Mercury's Orbit</a></li>
-        <li><a href="#spacetime" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Space and Time</a></li>
-        <li><a href="#black-holes" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Black Holes</a></li>
-        <li><a href="#formation" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Formation</a></li>
-        <li><a href="#types" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Types of Black Holes</a></li>
-        <li><a href="#observations" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Observational Evidence</a></li>
-        <li><a href="#conclusion" class="sidebar-link block text-purple-200 hover:text-purple-300 py-2 px-4 rounded">Conclusion</a></li>
-      </ul>
-    </aside>
-
-    <!-- Main Article -->
-    <div class="md:w-3/4 bg-gray-800 rounded-xl p-8 article-content glow-effect">
-      <h2 class="text-4xl font-bold text-center mb-12 text-purple-300">The General Theory of Relativity and Black Holes</h2>
-      <div class="prose prose-invert max-w-none">
-        <h3 id="introduction">Introduction</h3>
-        <p>The General Theory of Relativity, formulated by Albert Einstein in 1915, stands as a cornerstone of modern physics, fundamentally reshaping our understanding of gravity, space, and time. Building on his earlier Special Theory of Relativity (1905), which addressed objects moving at constant speeds, Einstein sought to explain gravity in a universe where massive objects influence each other’s motion. This theory not only provided a new framework for gravity but also predicted the existence of enigmatic cosmic phenomena like black holes—objects so dense that their gravitational pull traps even light. This article explores the principles of General Relativity, its experimental validations, and the fascinating nature of black holes, which continue to captivate scientists and the public alike.</p>
-
-        <h3 id="general-relativity">Part 1: The Theory of General Relativity</h3>
-        <p>Published in 1915, Einstein’s General Theory of Relativity revolutionized physics by redefining gravity. Unlike Newton’s concept of gravity as a force between masses, Einstein proposed that gravity arises from the curvature of spacetime caused by mass and energy. This curvature dictates how objects move, from planets orbiting stars to light bending near massive objects. The theory’s mathematical foundation, encapsulated in Einstein’s field equations, describes how matter and energy shape spacetime and how spacetime, in turn, influences motion. These equations, expressed as \( G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} \), where \( G_{\mu\nu} \) is the Einstein tensor and \( T_{\mu\nu} \) is the stress-energy tensor, have enabled precise predictions about cosmic phenomena, from planetary orbits to the expansion of the universe.</p>
-        <p>The theory’s implications were profound, leading to discoveries such as gravitational waves, time dilation, and black holes. Its publication marked a turning point, challenging centuries-old Newtonian mechanics and providing a framework for modern cosmology.</p>
-
-        <h4 id="test1">Test 1: The 1919 Solar Eclipse</h4>
-        <p>The first major experimental validation of General Relativity came during a solar eclipse on May 11, 1919, led by British astronomer Arthur Eddington. Einstein predicted that the Sun’s mass would curve spacetime, bending the light from distant stars passing near it. During the eclipse, when the Sun’s glare was obscured, Eddington’s team measured the positions of stars near the Sun’s edge and compared them to their known positions at night. The observed shift matched Einstein’s predictions, confirming that spacetime curvature caused starlight to bend—a phenomenon known as gravitational lensing. This experiment, conducted on the island of Príncipe and in Sobral, Brazil, catapulted Einstein to global fame and solidified General Relativity as a groundbreaking theory.</p>
-
-        <h4 id="test2">Test 2: Mercury’s Orbit</h4>
-        <p>Another triumph of General Relativity was its explanation of an anomaly in Mercury’s orbit, known as the precession of its perihelion. Astronomers had observed that Mercury’s orbit shifted by approximately 43 arcseconds per century, a discrepancy that Newtonian mechanics couldn’t fully account for. Hypotheses like an unseen planet (tentatively named Vulcan) or an asteroid belt were proposed but lacked evidence. Einstein’s theory resolved this by showing that the Sun’s mass warps spacetime, causing Mercury’s orbit to precess slightly with EACH revolution. This precise agreement between observation and prediction, calculated using the Schwarzschild solution to Einstein’s field equations, provided further evidence for General Relativity’s accuracy.</p>
-
-        <h4 id="spacetime">The Fabric of Space and Time</h4>
-        <p>Central to General Relativity is the concept of spacetime, a four-dimensional continuum combining three spatial dimensions and one temporal dimension. Einstein envisioned spacetime as a flexible fabric that massive objects, like stars or planets, deform, creating “wells” that influence the motion of other objects. This curvature explains why planets follow elliptical orbits and why light bends near massive bodies. A classic analogy is a bowling ball on a trampoline, where the ball’s weight creates a dip that affects the path of smaller objects rolling nearby.</p>
-        <p>Time dilation, a key prediction, illustrates how spacetime affects time. Consider a light clock, where a photon bounces between two mirrors to measure time. For a stationary observer, the photon travels a straight path, ticking at a constant rate. For an observer moving relative to the clock (e.g., on a spaceship), the photon’s path appears diagonal, taking longer to complete a cycle, resulting in slower perceived time. This effect, observed in experiments like the Hafele-Keating experiment (1971) with atomic clocks on airplanes, confirms that time runs slower in stronger gravitational fields or at higher relative speeds, as predicted by General Relativity. The original document’s claim about faster-than-light travel is incorrect; time dilation occurs due to relative motion or gravity, not superluminal speeds.</p>
-
-        <h3 id="black-holes">Part 2: Black Holes</h3>
-        <p>Black holes, predicted by General Relativity, are among the most enigmatic objects in the universe. They form regions of spacetime where gravity is so intense that the escape velocity exceeds the speed of light (\( c \approx 3 \times 10^8 \, \text{m/s} \)), preventing anything, including light, from escaping. This property makes black holes invisible, detectable only through their gravitational effects or surrounding matter. However, Stephen Hawking’s 1974 discovery of Hawking radiation suggests that black holes emit particles due to quantum effects near the event horizon, causing them to slowly lose mass over time. This challenges the notion of black holes as completely inescapable.</p>
-        <p>Black holes are characterized by their event horizon, the boundary beyond which nothing can return, and their singularity, a point of infinite density at the core. Large black holes often have accretion disks—rotating rings of gas and dust spiraling inward, heating up, and emitting X-rays, making them observable.</p>
-
-        <h4 id="formation">Formation</h4>
-        <p>Black holes typically form from the collapse of massive stars (at least 20 times the Sun’s mass). A star’s life begins in a nebula, where hydrogen clouds coalesce under gravity, igniting nuclear fusion to form helium and heavier elements. This fusion produces an outward pressure that balances gravity’s inward pull, maintaining stability. When the star’s hydrogen is depleted, fusion slows, and gravity dominates, compressing the core. For massive stars, this collapse triggers a supernova—a cataclysmic explosion expelling outer layers while the core collapses into a singularity, forming a black hole. The supernova’s energy can outshine an entire galaxy, as seen in events like SN 1987A.</p>
-        <p>As NASA describes, “A black hole is an astronomical object with a gravitational pull so strong that nothing, not even light, can escape it.” This process highlights the delicate balance between nuclear fusion and gravity, with black holes representing the ultimate victory of gravitational collapse.</p>
-
-        <h4 id="types">Types of Black Holes</h4>
-        <p>Black holes are classified into three main types based on their mass and formation:</p>
-        <ul class="list-disc pl-6">
-          <li><strong>Primordial Black Holes:</strong> Hypothetical black holes, potentially formed in the early universe due to density fluctuations. Smaller than an atom’s nucleus, they could range from microscopic to several solar masses. Some theories suggest they contribute to dark matter, though no direct evidence exists. Their small size makes them candidates for rapid evaporation via Hawking radiation.</li>
-          <li><strong>Stellar-Mass Black Holes:</strong> Formed from the collapse of massive stars, these black holes have masses between 3 and 100 solar masses. They are detected in binary systems, where their gravity affects companion stars, or through X-ray emissions from accretion disks, as in Cygnus X-1.</li>
-          <li><strong>Supermassive Black Holes:</strong> Residing at galactic centers, these giants range from millions to billions of solar masses. For example, Sagittarius A* in the Milky Way has a mass of about 4 million solar masses. Their formation is less understood, possibly resulting from mergers of smaller black holes or rapid accretion in the early universe.</li>
-        </ul>
-        <p>Accretion disks around supermassive black holes power active galactic nuclei, like quasars, which emit intense radiation across the electromagnetic spectrum.</p>
-
-        <h4 id="observations">Observational Evidence</h4>
-        <p>Direct observation of black holes is challenging due to their invisibility, but their presence is inferred through gravitational effects. The Event Horizon Telescope (EHT) achieved a milestone in 2019 by capturing the first image of a black hole’s shadow in the galaxy M87, showing a bright ring (the accretion disk) around a dark event horizon. Gravitational wave detections by LIGO and Virgo, starting in 2015, have confirmed black hole mergers, providing direct evidence of their existence. X-ray telescopes, like NASA’s Chandra, detect emissions from accretion disks, while the motion of stars and gas near galactic centers, such as around Sagittarius A*, reveals the presence of supermassive black holes.</p>
-        <p>Recent studies, including those in 2025, continue to refine our understanding, with observations of black hole jets and their role in galaxy formation. These discoveries underscore General Relativity’s predictive power and the ongoing quest to unravel black hole mysteries.</p>
-
-        <h3 id="conclusion">Conclusion</h3>
-        <p>The General Theory of Relativity transformed our understanding of the universe, replacing Newton’s force-based gravity with a dynamic spacetime framework. Its predictions, from gravitational lensing to black holes, have been repeatedly confirmed, shaping modern astrophysics. Black holes, once theoretical curiosities, are now central to cosmology, offering insights into the universe’s structure and evolution. Ongoing research, including gravitational wave observatories and advanced telescopes, continues to probe these enigmatic objects, ensuring that Einstein’s legacy endures in our exploration of the cosmos.</p>
-
-        <p class="mt-8 text-sm text-gray-400">Image sources: The Anderson Institute, Einstein-online.info. For inquiries, contact <a href="mailto:vashwardhantiwar28@gmail.com" class="text-purple-400 hover:text-purple-500">vashwardhantiwar28@gmail.com</a>.</p>
+<body class="bg-gradient-to-br from-purple-800 to-purple-900 min-h-screen flex flex-col items-center justify-center text-gray-800">
+  <div class="container mx-auto p-8">
+    <h1 class="text-5xl font-extrabold text-center mb-12 text-white bg-gradient-to-r from-purple-900 to-purple-700 py-4 px-8 rounded-xl shadow-lg">Motion Test - Class 9 (NCERT)</h1>
+    <div class="bg-purple-100 rounded-xl p-8 shadow-lg">
+      <p class="text-lg text-purple-800 mb-6">Answer the following 25 advanced questions on motion based on the NCERT Class 9 syllabus. Select the correct option for each.</p>
+      <div class="space-y-8">
+        <!-- Question 1 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">1. A car moves from rest with a uniform acceleration of 2 m/s² for 10 seconds. What is its final velocity?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q1" value="a" class="mr-2"> a) 10 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q1" value="b" class="mr-2"> b) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q1" value="c" class="mr-2"> c) 20 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q1" value="d" class="mr-2"> d) 25 m/s</label>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">2. The distance covered by an object moving with uniform velocity of 5 m/s for 6 seconds is:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q2" value="a" class="mr-2"> a) 20 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q2" value="b" class="mr-2"> b) 30 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q2" value="c" class="mr-2"> c) 40 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q2" value="d" class="mr-2"> d) 50 m</label>
+          </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">3. The slope of a distance-time graph for an object in uniform motion represents:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q3" value="a" class="mr-2"> a) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q3" value="b" class="mr-2"> b) Velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q3" value="c" class="mr-2"> c) Displacement</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q3" value="d" class="mr-2"> d) Distance</label>
+          </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">4. A body decelerates uniformly from 15 m/s to rest in 5 seconds. What is its acceleration?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q4" value="a" class="mr-2"> a) -3 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q4" value="b" class="mr-2"> b) -2 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q4" value="c" class="mr-2"> c) -4 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q4" value="d" class="mr-2"> d) -5 m/s²</label>
+          </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">5. The area under a velocity-time graph represents:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q5" value="a" class="mr-2"> a) Speed</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q5" value="b" class="mr-2"> b) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q5" value="c" class="mr-2"> c) Displacement</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q5" value="d" class="mr-2"> d) Velocity</label>
+          </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">6. A car travels 200 m in 10 seconds with uniform velocity. What is its speed?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q6" value="a" class="mr-2"> a) 10 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q6" value="b" class="mr-2"> b) 20 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q6" value="c" class="mr-2"> c) 30 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q6" value="d" class="mr-2"> d) 40 m/s</label>
+          </div>
+        </div>
+        <!-- Question 7 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">7. A body starts from rest and moves with a uniform acceleration of 3 m/s². What is its velocity after 4 seconds?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q7" value="a" class="mr-2"> a) 9 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q7" value="b" class="mr-2"> b) 12 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q7" value="c" class="mr-2"> c) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q7" value="d" class="mr-2"> d) 18 m/s</label>
+          </div>
+        </div>
+        <!-- Question 8 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">8. Which of the following is a scalar quantity?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q8" value="a" class="mr-2"> a) Velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q8" value="b" class="mr-2"> b) Displacement</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q8" value="c" class="mr-2"> c) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q8" value="d" class="mr-2"> d) Distance</label>
+          </div>
+        </div>
+        <!-- Question 9 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">9. A train accelerates uniformly from 10 m/s to 30 m/s in 20 seconds. What is the distance covered?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q9" value="a" class="mr-2"> a) 400 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q9" value="b" class="mr-2"> b) 500 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q9" value="c" class="mr-2"> c) 600 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q9" value="d" class="mr-2"> d) 800 m</label>
+          </div>
+        </div>
+        <!-- Question 10 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">10. The slope of a velocity-time graph for an object in uniform motion is:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q10" value="a" class="mr-2"> a) Zero</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q10" value="b" class="mr-2"> b) Positive</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q10" value="c" class="mr-2"> c) Negative</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q10" value="d" class="mr-2"> d) Infinite</label>
+          </div>
+        </div>
+        <!-- Question 11 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">11. A car moves with a uniform velocity of 20 m/s for 5 seconds and then comes to rest in 2 seconds. What is the retardation?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q11" value="a" class="mr-2"> a) -5 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q11" value="b" class="mr-2"> b) -10 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q11" value="c" class="mr-2"> c) -15 m/s²</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q11" value="d" class="mr-2"> d) -20 m/s²</label>
+          </div>
+        </div>
+        <!-- Question 12 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">12. An object covers 100 m in 10 seconds with uniform velocity. What is the time taken to cover the next 100 m?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q12" value="a" class="mr-2"> a) 5 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q12" value="b" class="mr-2"> b) 10 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q12" value="c" class="mr-2"> c) 15 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q12" value="d" class="mr-2"> d) 20 s</label>
+          </div>
+        </div>
+        <!-- Question 13 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">13. A body starts with an initial velocity of 10 m/s and accelerates at 2 m/s² for 5 seconds. What is the final velocity?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q13" value="a" class="mr-2"> a) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q13" value="b" class="mr-2"> b) 20 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q13" value="c" class="mr-2"> c) 25 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q13" value="d" class="mr-2"> d) 30 m/s</label>
+          </div>
+        </div>
+        <!-- Question 14 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">14. The equation v = u + at is used to find:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q14" value="a" class="mr-2"> a) Displacement</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q14" value="b" class="mr-2"> b) Final velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q14" value="c" class="mr-2"> c) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q14" value="d" class="mr-2"> d) Distance</label>
+          </div>
+        </div>
+        <!-- Question 15 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">15. A cyclist travels 360 m in 30 seconds. What is the average speed?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q15" value="a" class="mr-2"> a) 10 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q15" value="b" class="mr-2"> b) 12 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q15" value="c" class="mr-2"> c) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q15" value="d" class="mr-2"> d) 18 m/s</label>
+          </div>
+        </div>
+        <!-- Question 16 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">16. A body starts from rest and moves with an acceleration of 4 m/s². What is the distance covered in 3 seconds?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q16" value="a" class="mr-2"> a) 12 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q16" value="b" class="mr-2"> b) 18 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q16" value="c" class="mr-2"> c) 24 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q16" value="d" class="mr-2"> d) 36 m</label>
+          </div>
+        </div>
+        <!-- Question 17 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">17. A car moves with a velocity of 10 m/s and accelerates at 2 m/s² for 5 seconds. What is the distance covered?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q17" value="a" class="mr-2"> a) 50 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q17" value="b" class="mr-2"> b) 75 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q17" value="c" class="mr-2"> c) 100 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q17" value="d" class="mr-2"> d) 125 m</label>
+          </div>
+        </div>
+        <!-- Question 18 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">18. An object moving with uniform velocity has a distance-time graph that is:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q18" value="a" class="mr-2"> a) A curved line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q18" value="b" class="mr-2"> b) A straight line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q18" value="c" class="mr-2"> c) A horizontal line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q18" value="d" class="mr-2"> d) A vertical line</label>
+          </div>
+        </div>
+        <!-- Question 19 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">19. A body moves with an initial velocity of 5 m/s and an acceleration of 3 m/s². What is the velocity after 4 seconds?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q19" value="a" class="mr-2"> a) 12 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q19" value="b" class="mr-2"> b) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q19" value="c" class="mr-2"> c) 17 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q19" value="d" class="mr-2"> d) 20 m/s</label>
+          </div>
+        </div>
+        <!-- Question 20 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">20. The equation s = ut + ½at² is used to find:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q20" value="a" class="mr-2"> a) Velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q20" value="b" class="mr-2"> b) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q20" value="c" class="mr-2"> c) Displacement</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q20" value="d" class="mr-2"> d) Speed</label>
+          </div>
+        </div>
+        <!-- Question 21 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">21. A car travels 50 m in 5 seconds and then 100 m in 10 seconds. What is the average speed?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q21" value="a" class="mr-2"> a) 10 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q21" value="b" class="mr-2"> b) 15 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q21" value="c" class="mr-2"> c) 20 m/s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q21" value="d" class="mr-2"> d) 25 m/s</label>
+          </div>
+        </div>
+        <!-- Question 22 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">22. A body moves with uniform acceleration of 5 m/s² for 6 seconds, starting from rest. What is the distance covered?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q22" value="a" class="mr-2"> a) 60 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q22" value="b" class="mr-2"> b) 90 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q22" value="c" class="mr-2"> c) 120 m</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q22" value="d" class="mr-2"> d) 150 m</label>
+          </div>
+        </div>
+        <!-- Question 23 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">23. An object moving with uniform velocity has a velocity-time graph that is:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q23" value="a" class="mr-2"> a) A curved line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q23" value="b" class="mr-2"> b) A straight horizontal line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q23" value="c" class="mr-2"> c) A straight sloped line</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q23" value="d" class="mr-2"> d) A vertical line</label>
+          </div>
+        </div>
+        <!-- Question 24 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">24. A body starts with a velocity of 8 m/s and decelerates at 2 m/s². What is the time taken to come to rest?</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q24" value="a" class="mr-2"> a) 2 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q24" value="b" class="mr-2"> b) 3 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q24" value="c" class="mr-2"> c) 4 s</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q24" value="d" class="mr-2"> d) 5 s</label>
+          </div>
+        </div>
+        <!-- Question 25 -->
+        <div class="card-hover bg-white p-6 rounded-lg">
+          <p class="text-purple-900 font-semibold">25. The equation v² = u² + 2as is used to find:</p>
+          <div class="mt-3 space-y-2">
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q25" value="a" class="mr-2"> a) Initial velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q25" value="b" class="mr-2"> b) Final velocity</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q25" value="c" class="mr-2"> c) Acceleration</label>
+            <label class="option-label block p-2 rounded-md"><input type="radio" name="q25" value="d" class="mr-2"> d) Distance</label>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <button id="submit-btn" class="bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold py-3 px-8 rounded-lg hover:bg-purple-700 transition">Submit Test</button>
+      </div>
+      <div id="result-container" class="mt-6 bg-white rounded-lg p-6 shadow-lg opacity-0">
+        <h2 class="text-2xl font-bold text-purple-900 mb-4">Test Results</h2>
+        <p id="score" class="text-lg text-purple-800"></p>
+        <p id="unanswered" class="text-lg text-purple-800 mb-4"></p>
+        <div id="feedback" class="text-purple-700"></div>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-purple-950 to-indigo-950 py-8 glow-effect">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-300">© 2025 Cosmos. All rights reserved.</p>
-      <div class="mt-4 space-x-6">
-        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Privacy Policy</a>
-        <a href="#" class="text-purple-300 hover:text-purple-400 transition-colors">Terms of Use</a>
-      </div>
-    </div>
-  </footer>
-
+  </div>
   <script>
-    // Smooth scroll for navigation and sidebar links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+    // Add click animation for cards
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.add('scale-95');
+        setTimeout(() => card.classList.remove('scale-95'), 200);
       });
     });
 
-    // Fade-in animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
+    // Answer key for the test
+    const answerKey = {
+      q1: 'c',  // 20 m/s (v = u + at = 0 + 2*10 = 20)
+      q2: 'b',  // 30 m (s = vt = 5*6 = 30)
+      q3: 'b',  // Velocity (slope of distance-time graph)
+      q4: 'a',  // -3 m/s² (a = (v-u)/t = (0-15)/5 = -3)
+      q5: 'c',  // Displacement (area under velocity-time graph)
+      q6: 'b',  // 20 m/s (s/t = 200/10 = 20)
+      q7: 'b',  // 12 m/s (v = u + at = 0 + 3*4 = 12)
+      q8: 'd',  // Distance (scalar quantity)
+      q9: 'c',  // 600 m (s = (u+v)/2 * t = (10+30)/2 * 20 = 600)
+      q10: 'a', // Zero (velocity-time graph for uniform motion is horizontal)
+      q11: 'b', // -10 m/s² (a = (v-u)/t = (0-20)/2 = -10)
+      q12: 'b', // 10 s (v = 100/10 = 10 m/s, t = 100/10 = 10 s)
+      q13: 'b', // 20 m/s (v = u + at = 10 + 2*5 = 20)
+      q14: 'b', // Final velocity (v = u + at)
+      q15: 'b', // 12 m/s (s/t = 360/30 = 12)
+      q16: 'b', // 18 m (s = ut + ½at² = 0 + ½*4*3² = 18)
+      q17: 'b', // 75 m (s = ut + ½at² = 10*5 + ½*2*5² = 75)
+      q18: 'b', // A straight line (distance-time graph for uniform velocity)
+      q19: 'c', // 17 m/s (v = u + at = 5 + 3*4 = 17)
+      q20: 'c', // Displacement (s = ut + ½at²)
+      q21: 'a', // 10 m/s (s = (s1+s2)/(t1+t2) = (50+100)/(5+10) = 10)
+      q22: 'b', // 90 m (s = ut + ½at² = 0 + ½*5*6² = 90)
+      q23: 'b', // A straight horizontal line (velocity-time graph for uniform velocity)
+      q24: 'c', // 4 s (t = (v-u)/a = (0-8)/(-2) = 4)
+      q25: 'b'  // Final velocity (v² = u² + 2as)
+    };
 
-    document.querySelectorAll('.article-content h3, .article-content h4, .article-content p, .article-content ul').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-      observer.observe(el);
+    // Submit button functionality
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      let score = 0;
+      let feedback = [];
+      let unanswered = 0;
+
+      // Check each question
+      for (let i = 1; i <= 25; i++) {
+        const question = `q${i}`;
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const questionText = document.querySelector(`.card-hover:nth-child(${i}) p`).textContent;
+        if (selected) {
+          const userAnswer = selected.value;
+          const correctAnswer = answerKey[question];
+          if (userAnswer === correctAnswer) {
+            score++;
+            feedback.push(`<p class="text-green-600">${questionText}: Correct</p>`);
+          } else {
+            feedback.push(`<p class="text-red-600">${questionText}: Incorrect (Selected: ${userAnswer}, Correct: ${correctAnswer})</p>`);
+          }
+        } else {
+          unanswered++;
+          feedback.push(`<p class="text-yellow-600">${questionText}: Not answered</p>`);
+        }
+      }
+
+      // Calculate percentage
+      const percentage = (score / 25) * 100;
+
+      // Display results
+      const resultContainer = document.getElementById('result-container');
+      const scoreElement = document.getElementById('score');
+      const unansweredElement = document.getElementById('unanswered');
+      const feedbackElement = document.getElementById('feedback');
+
+      scoreElement.textContent = `Score: ${score}/25 (${percentage.toFixed(2)}%)`;
+      unansweredElement.textContent = unanswered > 0 ? `Unanswered questions: ${unanswered}` : '';
+      feedbackElement.innerHTML = feedback.join('');
+      resultContainer.classList.add('show');
+
+      // Scroll to results
+      resultContainer.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
