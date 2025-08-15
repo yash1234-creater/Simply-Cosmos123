@@ -5,47 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cosmos</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type=".jpg" href="/index.1html/thecpdsm.jpg">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     .card-hover {
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      border: 1px solid #e9d5ff;
+      box-shadow: 0 4px 8px rgb(255, 255, 255);
     }
     .card-hover:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(88, 28, 135, 0.4);
+      box-shadow: 0 10px 20px rgb(255, 255, 255);
     }
     .gradient-bg {
-      background: linear-gradient(135deg, #6b21a8 0%, #7e22ce 100%);
+      background: linear-gradient(135deg, #c4b5fd 0%, #d8b4fe 100%);
+      transition: transform 0.3s ease;
+    }
+    .card-hover:hover .gradient-bg {
+      transform: scaleX(1.1);
+    }
+    .scale-95 {
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
+    }
+    .disabled-card {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 100%);
+    }
+    .start-now, .watch-now {
+      transition: color 0.3s ease;
+    }
+    .card-hover:hover .start-now, .card-hover:hover .watch-now {
+      color: #7e22ce;
+    }
+    h1, h2.section-title {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .contact-icon {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .contact-icon:hover {
+      color: #7e22ce;
+      transform: scale(1.2);
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-purple-800 to-purple-900 min-h-screen flex flex-col items-center justify-center">
-  <div class="container mx-auto p-8">
-    <h1 class="text-5xl font-extrabold text-center mb-12 text-white bg-gradient-to-r from-purple-900 to-purple-700 py-4 px-8 rounded-xl shadow-lg">The Cosmos Test</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<body class="bg-[#CF9FFF] min-h-screen flex flex-col items-center">
+  <div class="container mx-auto p-4 sm:p-8">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-gray-800 bg-gradient-to-r from-purple-300 to-purple-400 py-4 px-8 rounded-xl shadow-lg">The Cosmos Test</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- Test Card 1 -->
-      <a href="relativity-black-holes.html" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+      <a href="relativity-black-holes.html" class="bg-white rounded-xl p-6 card-hover relative overflow-hidden" aria-label="Start Motion Test for Class 9">
         <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
-        <h2 class="text-2xl font-bold text-purple-900 mt-4"  href = "relativityblackholes.html">MOTION TEST</h2>
-        <p class="text-purple-700 mt-2">Motion test for class - 9</p>
-        <div class="mt-4 text-purple-600 font-semibold">Start Now →</div>
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-4">Motion Test</h2>
+        <p class="text-gray-600 mt-2">Motion test for class - 9</p>
+        <div class="mt-4 text-purple-500 font-semibold start-now">Start Now →</div>
       </a>
 
-       <a href="trignonmetry.html" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+      <!-- Test Card 2 -->
+      <a href="trigonometry.html" class="bg-white rounded-xl p-6 card-hover relative overflow-hidden" aria-label="Start Trigonometry Test for Class 10">
         <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
-        <h2 class="text-2xl font-bold text-purple-900 mt-4"  href = "trignonmetry.html">Trigonometry Test </h2>
-        <p class="text-purple-700 mt-2">Trigonometry test for class - 10</p>
-        <div class="mt-4 text-purple-600 font-semibold">Start Now →</div>
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-4">Trigonometry Test</h2>
+        <p class="text-gray-600 mt-2">Trigonometry test for class - 10</p>
+        <div class="mt-4 text-purple-500 font-semibold start-now">Start Now →</div>
       </a>
 
-       <a href="fsdfsadf" class="bg-purple-100 rounded-xl p-6 card-hover relative overflow-hidden">
+      <!-- Placeholder Card -->
+      <div class="bg-gray-50 rounded-xl p-6 relative overflow-hidden disabled-card">
         <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
-        <h2 class="tex"">MORE TEST COMING SOON !!!!!! </h2>
-        <p class="text-purple-700 mt-2"></p>
-        <div class="mt-4 text-purple-600 font-semibold"></div>
-      </a>
-      
-      
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-4">More Tests Coming Soon!</h2>
+        <p class="text-gray-600 mt-2">Stay tuned for new tests.</p>
+      </div>
     </div>
+
+    <!-- Recent Videos Section -->
+    <h2 class="section-title text-3xl sm:text-4xl font-extrabold text-center mt-16 mb-8 text-gray-800 bg-gradient-to-r from-purple-300 to-purple-400 py-3 px-6 rounded-xl shadow-lg">Recent Videos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Video Card 1 -->
+      <!-- Replace the href with your video link (e.g., YouTube URL) -->
+      <a href="https://www.youtube.com/watch?v=uYBMB50A3AY" class="bg-white rounded-xl p-6 card-hover relative overflow-hidden" aria-label="Watch Video 1">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-4">Motion class - 9th</h3>
+        <p class="text-gray-600 mt-2"></p>
+        <div class="mt-4 text-purple-500 font-semibold watch-now">Watch Now →</div>
+      </a>
+
+      <!-- Video Card 2 -->
+      <!-- Replace the href with your video link (e.g., YouTube URL) -->
+      <a href="https://www.youtube.com/watch?v=n2LoSvcwQik" class="bg-white rounded-xl p-6 card-hover relative overflow-hidden" aria-label="Watch Video 2">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-4">Trigonometry class - 10th</h3>
+        <p class="text-gray-600 mt-2"></p>
+        <div class="mt-4 text-purple-500 font-semibold watch-now">Watch Now →</div>
+      </a>
+      
+      
+     
+
+    
+
+    <!-- Contact Icons Section -->
+    <footer class="mt-16 mb-8">
+      <h2 class="section-title text-3xl sm:text-4xl font-extrabold text-center mb-8 text-gray-800 bg-gradient-to-r from-purple-300 to-purple-400 py-3 px-6 rounded-xl shadow-lg">Contact Us</h2>
+      <div class="flex justify-center space-x-6">
+       
+       
+        <!-- Replace href with your YouTube channel link -->
+        <a href="https://www.youtube.com/@TheCosmos-123" class="text-gray-600 text-3xl contact-icon" aria-label="Subscribe to our YouTube channel" target="_blank">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+      </div>
+    </footer>
   </div>
   <script>
     // Add click animation
@@ -58,7 +132,3 @@
   </script>
 </body>
 </html>
-
-
-
-
